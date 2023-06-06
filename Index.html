@@ -32,8 +32,27 @@
     }
 
     .section img {
-      width: 200px;
-      margin-right: 10px;
+  width: 200px;
+  margin-right: 10px;
+  background-color: white; /* tambahkan baris ini */
+}
+
+    .product {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .buy-button {
+      background-color: #4caf50;
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin-top: 10px;
+      cursor: pointer;
     }
 
     footer {
@@ -42,6 +61,23 @@
       text-align: center;
     }
   </style>
+   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script>
+    window.onload = function() {
+      var buyButtons = document.getElementsByClassName("buy-button");
+      for (var i = 0; i < buyButtons.length; i++) {
+        buyButtons[i].addEventListener("click", function() {
+          var productName = this.parentElement.getElementsByTagName("p")[0].innerText;
+          Swal.fire({
+            title: "Beli Produk",
+            text: "Anda telah membeli " + productName,
+            icon: "success",
+            confirmButtonText: "OK"
+          });
+        });
+      }
+    };
+  </script>
 </head>
 <body>
   <header>
@@ -63,7 +99,7 @@
         <li>Mengandung serat yang baik untuk pencernaan</li>
         <li>Kaya akan energi dan karbohidrat</li>
         <li>Mengandung vitamin dan mineral seperti vitamin c, zat besi, dan magesium</li>
-        <li>Menyediakan rasa yang renyah dan enak sebagai cemilan sehat></li>
+        <li>Menyediakan rasa yang renyah dan enak sebagai cemilan sehat</li>
       </ul>
     </div>
 
@@ -89,43 +125,39 @@
     </div>
 
     <div class="section">
-      <h2>Gambar Produk</h2>
-      <img src="Kripik1.jpg" alt="Gambar 1">
-      <img src="Kripik2.jpg" alt="Gambar 2">
-      <img src="Kripik3.jpg" alt="Gambar 3">
+      <h2>Gambar Produk Dan Harga Produk</h2>
+      <div class="product">
+        <img src="Kripik1.jpg" alt="Gambar 1">
+        <p>Kripkong rasa Barbeque</p>
+        <p>Harga: Rp 3.000</p>
+        <a href="#" class="buy-button">Beli</a>
+      </div>
+      <div class="product">
+        <img src="Kripik2.jpg" alt="Gambar 2">
+        <p>Kripkong rasa Keju</p>
+        <p>Harga: Rp 3.000</p>
+        <a href="#" class="buy-button">Beli</a>
+      </div>
+      <div class="product">
+        <img src="Kripik3.jpg" alt="Gambar 3">
+        <p>Kripkong rasa Balado</p>
+        <p>Harga: Rp 3.000</p>
+        <a href="#" class="buy-button">Beli</a>
+      </div>
     </div>
 
-    <div class="section">
-      <h2>Harga Produk</h2>
-      <table>
-        <tr>
-          <th>Nama Produk</th>
-          <th>Harga</th>
-        </tr>
-        <tr>
-          <td>Kripkong rasa Barbeque</td>
-          <td>Rp 3.000</td>
-        </tr>
-        <tr>
-          <td>Kripkong rasa Keju</td>
-          <td>Rp 3.000</td>
-        </tr>
-        <tr>
-          <td>Kripkong rasa Balado</td>
-          <td>Rp 3.000</td>
-        </tr>
-      </table>
-    </div>
-  </div>
-<p>Silahkan kunjungi toko kami di:</p>
-<address>
+  
+
+  <p>Silahkan kunjungi toko kami di:</p>
+  <address>
     JL Cempaka<br>
     Galang Kota, Sumatra Utara, Indonesia<br>
-    Telp : 085362568648<br>
+    Telp: 085362568648<br>
     Email: marisamanullang8@gmail.com<br>
-</address>
+  </address>
+
   <footer>
-    Copyright &copy; 2023 Toko Kripkong. All rights reserved.
+    &copy; 2023 Toko Kripkong. All rights reserved.
   </footer>
 </body>
 </html>
